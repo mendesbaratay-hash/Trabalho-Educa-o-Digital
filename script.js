@@ -625,6 +625,8 @@ const careerAreas = {
 
 const quizMessages = {
     pt: {
+       heading: "Descubra suas áreas de interesse",
+intro: "Responda às perguntas e descubra quais áreas profissionais combinam com seus interesses.",
         question: "Pergunta",
         of: "de",
         back: "Voltar",
@@ -636,6 +638,8 @@ const quizMessages = {
         note: "Este teste é uma ferramenta de exploração de interesses. O resultado não determina sua profissão ou seu futuro."
     },
     en: {
+       heading: "Discover your areas of interest",
+intro: "Answer the questions and discover which professional areas match your interests.",
         question: "Question",
         of: "of",
         back: "Back",
@@ -647,6 +651,8 @@ const quizMessages = {
         note: "This test is a tool for exploring interests. The result does not determine your career or future."
     },
     es: {
+       heading: "Descubre tus áreas de interés",
+intro: "Responde las preguntas y descubre qué áreas profesionales coinciden con tus intereses.",
         question: "Pregunta",
         of: "de",
         back: "Volver",
@@ -668,6 +674,11 @@ function renderQuestion() {
 
     const language = getQuizLanguage();
     const messages = quizMessages[language];
+
+   document.getElementById("quizHeading").textContent = messages.heading;
+   
+document.getElementById("quizDescription").textContent = messages.intro;
+   
     const question = quizQuestions[language][currentQuestion];
 
     const questionText = document.getElementById("questionText");
@@ -732,6 +743,9 @@ function showQuizResult() {
 
     const language = getQuizLanguage();
     const messages = quizMessages[language];
+
+   document.getElementById("quizHeading").textContent = messages.heading;
+document.getElementById("quizDescription").textContent = messages.intro;
 
     const scores = {
         technology: 0,
